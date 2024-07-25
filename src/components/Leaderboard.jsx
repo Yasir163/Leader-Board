@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import group from '../assets/group.svg';
 import '../components/leaderboard.css';
+import trophy from '../assets/trophy.svg';
 import '../App.css'
 
 function Leaderboard() {
@@ -8,6 +9,7 @@ function Leaderboard() {
     const [value, setValue] = useState('');
     const [data, setData] = useState({});
     const [error, setError] = useState('');
+    const [recentEntry, setRecentEntry] = useState(null);
 
     // Handle input change
     const handleChange = (event) => {
@@ -28,6 +30,7 @@ function Leaderboard() {
             [key]: parseInt(value, 10) // Convert value to integer
         }));
         // Clear inputs
+        setRecentEntry({ key, value: parseInt(value, 10) });
         setKey('');
         setValue('');
     };
@@ -78,18 +81,24 @@ function Leaderboard() {
                 <div>
                     <div className='card'>
                         <div className='container card-container-header'>
-                            <div className='name-heading'>Car Name</div>
+                            <div className='header-trophy'>
+                                <div><img className='trophy' src={trophy} alt="" /></div>
+                                <div className='name-heading'>Name</div>
+                            </div>
                             <div className='time-heading'>Time (minutes)</div>
                         </div>
                     </div>
                     {Object.entries(data).
                         sort((a, b) => a[1] - b[1]).
-                        splice(0, 3)
+                        splice(0, 5)
                         .map(([key, value], index) => (
                             <div className='card'>
                                 <div className={`container card-container ${getClassName(index)}`}>
-                                    <div className='name'>
-                                        {key.toUpperCase()}
+                                    <div className='header-trophy'>
+                                        <div className='serial-number'>{index + 1}</div>
+                                        <div className='name'>
+                                            {key.toUpperCase()}
+                                        </div>
                                     </div>
                                     <div className='timing'>
                                         {value} minutes
@@ -98,9 +107,19 @@ function Leaderboard() {
                             </div>
                         ))}
                 </div>
+                {recentEntry && (
+                <div>
+                    <h2>Most Recent Entry:</h2>
+                    <div className='card'>
+                        <div className='container card-container recent-entry'>
+                            <div className='name'>{recentEntry.key.toUpperCase()}</div>
+                            <div className='timing'>{recentEntry.value} MINUTES</div>
+                        </div>
+                    </div>
+                </div>
+            )}
             </div>
             <div className='lower-part'></div>
-
 
         </div>
     )

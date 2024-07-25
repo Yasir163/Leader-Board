@@ -58,7 +58,7 @@ input{
     width: 100%;
     margin: 0 auto;
     max-width: 100%;
-    padding: 20px 10px;
+    padding: 2px 0px;
     color: white;
     font-size: 1.25rem;
 
@@ -73,21 +73,52 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #360964;
+    color: black;
+    background-color: white;
+    opacity: 80%;
     border: 2px solid black;
     border-radius: 10px 10px 100px 10px;
-    padding: 10px 30px;
+    padding: 5px 15px;
     opacity: 95%;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
-
+.header-trophy{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.trophy{
+    width: 50px;
+}
 .card-container-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: black;
     border: 2px solid gray;
-    padding: 10px 30px;
+    padding: 5px 15px;
     opacity: 75%;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.serial-number{
+    background-color: black;
+    width: 50px;
+    color: white;
+    text-align: center;
+    padding: 2px 1px;
+    border-radius: 0px 0px 20px 0px;
+    opacity: 80%;
+}
+
+.name-heading{
+    font-weight: 700;
+    background: linear-gradient(to right,rgb(143, 67, 13),rgb(196, 116, 19),rgb(143, 67, 13));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .lower-part{
@@ -99,22 +130,39 @@ input{
 }
 
 .first{
-    background: linear-gradient(45deg, rgb(188, 152, 19), rgb(227, 209, 138),rgb(188, 152, 19));
-    color: white;
+    background: linear-gradient(45deg, rgb(232, 189, 34), rgb(227, 209, 138),rgb(232, 189, 34));
+    color:  white;
+    font-weight: 700;
     font-size: 1.5rem;
     font-weight: 700;
+}
+.first .name{
+    background: linear-gradient(to right, rgb(125, 99, 4), rgb(151, 127, 34),rgb(125, 99, 4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .second{
-    background: linear-gradient(45deg, rgb(148, 145, 145),rgb(194, 193, 193),rgb(148, 145, 145));
+    background: linear-gradient(45deg, rgb(181, 176, 176),rgb(194, 193, 193),rgb(148, 145, 145));
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
+.second .name{
+    background: linear-gradient(to right, rgb(108, 103, 103),rgb(151, 147, 147),rgb(108, 103, 103));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .third{
-    background: linear-gradient(45deg,rgb(143, 67, 13),rgb(219, 132, 25),rgb(143, 67, 13));
+    background: linear-gradient(45deg,rgb(176, 83, 17),rgb(219, 132, 25),rgb(143, 67, 13));
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.third .name{
+    background: linear-gradient(to right, rgb(122, 56, 9),rgb(155, 88, 6),rgb(122, 56, 9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
