@@ -11,7 +11,6 @@ function Leaderboard() {
     const [error, setError] = useState('');
     const [recentEntry, setRecentEntry] = useState(null);
 
-    // Handle input change
     const handleChange = (event) => {
         const { name, value } = event.target;
         if (name === 'key') setKey(value);
@@ -27,9 +26,9 @@ function Leaderboard() {
         }
         setData(prevData => ({
             ...prevData,
-            [key]: parseInt(value, 10) // Convert value to integer
+            [key]: parseInt(value, 10)
         }));
-        // Clear inputs
+        
         setRecentEntry({ key, value: parseInt(value, 10) });
         setKey('');
         setValue('');
@@ -53,6 +52,19 @@ function Leaderboard() {
                     </div>
                 </div>
             </div>
+            <header className='header'>
+                <div className='bar-container'>
+                    <div className='yellowbar longest'></div>
+                    <div className='yellowbar medium'></div>
+                    <div className='yellowbar shortest'></div>
+                </div>
+                <div className='header-text'>Fastest Of Today</div>
+                <div className='bar-container bluebar-conatiner'>
+                    <div className='bluebar shortest'></div>
+                    <div className='bluebar medium'></div>
+                    <div className='bluebar longest'></div>
+                </div>
+            </header>
             <div className='details'>
                 <div className='enter-details'>
                     <h1 className='data-heading'>Enter Data</h1>
@@ -90,7 +102,7 @@ function Leaderboard() {
                     </div>
                     {Object.entries(data).
                         sort((a, b) => a[1] - b[1]).
-                        splice(0, 5)
+                        splice(0,10)
                         .map(([key, value], index) => (
                             <div className='card'>
                                 <div className={`container card-container ${getClassName(index)}`}>
@@ -108,16 +120,19 @@ function Leaderboard() {
                         ))}
                 </div>
                 {recentEntry && (
-                <div>
-                    <h2>Most Recent Entry:</h2>
-                    <div className='card'>
-                        <div className='container card-container recent-entry'>
-                            <div className='name'>{recentEntry.key.toUpperCase()}</div>
-                            <div className='timing'>{recentEntry.value} MINUTES</div>
+                    <div className='recent-entry-main'>
+                        <div className='recent-entry-container'>
+                            <h2>Most Recent Entry:</h2>
+                            <div className='recent-card'>
+                                <div className='recent-entry'>
+                                    <div className='serial-number'>{}</div>
+                                    <div className='name'>{recentEntry.key.toUpperCase()}</div>
+                                </div>
+                                    <div className='timing'>{recentEntry.value} MINUTES</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )}
             </div>
             <div className='lower-part'></div>
 

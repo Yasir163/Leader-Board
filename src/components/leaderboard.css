@@ -14,6 +14,62 @@
     justify-content: space-between;
   }
 
+  .header{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 0;    
+  }
+  .bar-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bluebar-conatiner{
+    text-align:right;
+    direction: rtl;
+  }
+  .yellowbar{
+    height: 8px;
+    background: linear-gradient(to right,rgb(248, 198, 2), rgb(236, 192, 17));
+    border-radius: 25px;
+  }
+  .bluebar{
+    width: 50px;
+    height: 8px;
+    background: linear-gradient(to right,rgb(28, 177, 236), rgb(24, 161, 199));
+    border-radius: 25px;
+  }
+  .longest{
+    width: 250px;
+  }
+  .medium{
+    width: 200px;
+  }
+  .shortest{
+    width: 150px;
+  }
+
+  .bluebar-shortest{
+    width: -150px;
+  }
+  .header-text{
+    font-size: 3rem;
+    font-weight: 600;
+    display: inline-block;
+    transform: skewX(-20deg);
+    text-shadow:
+        0 0 5px rgb(229, 247, 139),
+        0 0 10px rgb(229, 247, 139),
+        0 0 15px rgb(229, 247, 139),
+        0 0 20px rgb(229, 247, 139),
+        0 0 25px rgb(229, 247, 139),
+        0 0 30px rgb(229, 247, 139),
+        0 0 35px rgb(229, 247, 139);
+    background-color: #000;
+  }
   .details{
     background: url(../assets/image\ 65\ \(1\).png);
     background-size: cover;
@@ -33,6 +89,17 @@
 .data-heading{
     color: white;
     margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    transform: skew(-10deg);
+    text-shadow:
+        0 0 5px rgb(8, 239, 131),
+        0 0 10px rgb(8, 239, 131),
+        0 0 15px rgb(8, 239, 131),
+        0 0 20px rgb(8, 239, 131),
+        0 0 25px rgb(8, 239, 131),
+        0 0 30px rgb(8, 239, 131),
+        0 0 35px rgb(8, 239, 131);
 }
 input{
     padding: 10px 15px;
@@ -41,12 +108,13 @@ input{
 }
 .input-button{
     padding: 5px 10px;
+    width: 150px;
     margin-top: 20px;
     border-radius: 25px;
     border: none;
-    border: 2px solid black;
+    border: 2px solid white;
     color: white;
-    background: linear-gradient(45deg, #f06595, #ff6b6b);
+    background: linear-gradient(45deg, #f0bf65, #ff6b6b);
     cursor: pointer;
     font-size: 1rem;
 }
@@ -165,4 +233,44 @@ input{
     background: linear-gradient(to right, rgb(122, 56, 9),rgb(155, 88, 6),rgb(122, 56, 9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.recent-entry-main{
+    background-color: rgb(133, 133, 197);
+    width: 100%;
+    border-top: 2px solid rgb(14, 14, 142);
+    border-bottom:  2px solid rgb(14, 14, 142);
+    padding: 5px 0;
+    opacity: 80%;
+}
+.recent-card{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 2px 0px;
+    color: white;
+    font-size: 1.25rem;
+    color: black;
+    background-color: rgb(189, 80, 203);
+    opacity: 80%;
+    border: 2px solid black;
+    border-radius: 10px 10px 100px 10px;
+    padding: 5px 15px;
+    opacity: 95%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recent-entry-container{
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+.recent-entry{
+    display: flex;
+    gap: 50px;
 }
